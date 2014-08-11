@@ -19,12 +19,14 @@ jQuery(window).load(function() {
   $('.sphinxglobaltoc').on({
     'mouseout' :function() {
       var that = this;
+      $('.sphinxglobaltoc').removeClass('addshadow');
       toc_close_timer = setTimeout(function() {
         $('.sphinxglobaltoc ul ul').hide();
       },
       close_time);
     },
     'mouseover' : function() {
+      $('.sphinxglobaltoc').addClass('addshadow');
       if (typeof toc_close_timer != undefined) {
         clearTimeout(toc_close_timer);
       }
